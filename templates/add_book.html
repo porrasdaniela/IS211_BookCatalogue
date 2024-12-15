@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+</head>
+<body>
+<h1>Add a Book</h1>
+
+<!-- Search by ISBN -->
+<form action="/add" method="POST">
+    <input type="text" name="isbn" placeholder="Search by ISBN" required>
+    <button type="submit">Search ISBN</button>
+</form>
+
+<!-- Search by Title -->
+<form action="/search_title" method="POST">
+    <input type="text" name="title" placeholder="Search by Title" required>
+    <button type="submit">Search Title</button>
+</form>
+
+<a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select a Book</title>
+</head>
+<body>
+<h1>Select a Book</h1>
+<form action="/select_book" method="POST">
+    <input type="hidden" name="isbn" value="{{ isbn }}">
+    {% for book in books %}
+        <div>
+            <input type="radio" name="selected_book" value="{{ loop.index0 }}" required>
+            <img src="{{ book['thumbnail'] }}" alt="Book Cover" width="100" height="150">
+            <p>{{ book['title'] }} by {{ book['author'] }}</p>
+            <p>Pages: {{ book['page_count'] }} | Rating: {{ book['average_rating'] }}</p>
+        </div>
+    {% endfor %}
+    <button type="submit">Add Selected Book</button>
+</form>
+</body>
+</html>
